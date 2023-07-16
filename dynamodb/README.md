@@ -11,6 +11,7 @@ erDiagram
         last_name string
         email_address string
         phone_number string
+        cognito_id string
     }
     BUILDING 1--1+ UNIT: contains
     BUILDING {
