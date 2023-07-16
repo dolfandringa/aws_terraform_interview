@@ -1,0 +1,6 @@
+terraform 1.4.6
+terraform-ls 0.31.1
+tfsec 1.28.1 
+tflint 0.46.1 
+awscli 2.11.18
+terraform-docs 0.16.0
