@@ -9,9 +9,12 @@ from authorizer_lambda.models import (
 )
 
 
-def test_handler():
+def test_handler(mocker):
+    mock_verify_dev_token = mocker.patch.object(main, "verify_dev_token")
+    mock_verify_dev_token.return_value = "a-b-c-d"
     request = Path(__file__).parent / Path("data/authorization_request.json")
     request = json.load(request.open("rt"))
+    token = request["authorizationToken"]
     response = main.handler(request, {})
     expected = AuthorizationResponse(
         principalId="a-b-c-d",
@@ -26,3 +29,4 @@ def test_handler():
         ),
     ).dict()
     assert response == expected
+    assert mock_verify_dev_token.assert_called_once_with(token)
