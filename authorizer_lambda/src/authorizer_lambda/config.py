@@ -1,4 +1,10 @@
+import os
+from pathlib import Path
+
 from pydantic import BaseSettings
+
+
+root_dir = Path(__file__).parent.parent.parent
 
 
 class Settings(BaseSettings):
@@ -12,6 +18,9 @@ class Settings(BaseSettings):
     backend_lambda_arn = (
         "arn:aws:lambda:us-east-1:11111111111:function:some-backend-lambda-dev"
     )
+    public_rsa_key = open(
+        os.path.join(root_dir, "id_rsa.pub"), "r"
+    ).read()  # assuming this will come from the KMS
 
 
 config = Settings()

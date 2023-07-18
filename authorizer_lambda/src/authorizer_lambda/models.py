@@ -20,6 +20,23 @@ class Owner(ModelConfig):
     owner_uuid: str
 
 
+class CognitoResponse(ModelConfig):
+    sub: str
+    device_key: str
+    iss: str
+    version: int
+    client_id: str
+    origin_jti: str
+    event_id: str
+    token_use: str
+    scope: str
+    auth_time: float
+    exp: float
+    iat: float
+    jti: str
+    owner_uuid: str
+
+
 class OwnerResponse(ModelConfig):
     """Response from the lambda."""
 

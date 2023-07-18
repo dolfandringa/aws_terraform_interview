@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "aws-terraform-interview"
+version = "0.1.0"
+description = ""
+authors = ["Yuri Araújo <yurisoares3000@gmail.com>"]
+readme = "README.md"
+packages = [{include = "aws_terraform_interview"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
